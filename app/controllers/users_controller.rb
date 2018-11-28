@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers]
+  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers, :liked_microposts]
   def index
     @users = User.all.page(params[:page])
   end
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.order('created_at DESC').page(params[:page])
+    @microposts = @user.feed_microposts.order('created_at DESC').page(params[:page])
     counts(@user)
   end
 
@@ -38,6 +38,15 @@ class UsersController < ApplicationController
     counts(@user)
   end
 
+
+# お気に入り機能
+  def liked_microposts
+    @user = User.find(params[:id])
+    @liked_microposts = @user.like.page(params[:page])
+    counts(@user)
+  end
+  
+  
 
   private
 
