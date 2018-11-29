@@ -6,9 +6,9 @@
       
 <%= hidden_field_tag :micropost_id, user.id %>
 
-      
+<div class="col-sm-3">    
 <%= f.submit 'お気に入り解除', class: 'btn btn-danger btn-block' %>
-
+</div>
     
 <% end %>
 
@@ -21,8 +21,9 @@
       
 <%= hidden_field_tag :micropost_id, user.id %>
 
-      
+<div class="col-sm-3">         
 <%= f.submit 'お気に入り', class: 'btn btn-primary btn-block' %>
+</div>
 
     
 <% end %>

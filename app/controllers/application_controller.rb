@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
     @count_followings = user.followings.count
     @count_followers = user.followers.count
     # お気に入り機能
-    @count_liked_microposts = user.like.count
+    @count_liked_microposts = user.liked_microposts.count
   end
 end

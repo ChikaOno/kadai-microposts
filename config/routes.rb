@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   
   # お気に入り機能
+  post '/users/:id/like', to: 'likes#create'
   resources :likes, only: [:create, :destroy]
 end
