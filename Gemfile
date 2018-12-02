@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 自分で追加
 gem 'kaminari'
+
+group :production do
+  gem 'pg', '0.21.0'
+end
