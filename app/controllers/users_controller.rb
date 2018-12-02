@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 # お気に入り機能
   def liked_microposts
     @user = User.find(params[:id])
-    @liked_microposts = @user.like.page(params[:page])
+    @liked_microposts = @user.liked_microposts.page(params[:page])
     counts(@user)
   end
   
