@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
   
   # お気に入り機能
-  has_many :likes
+  has_many :likes 
   has_many :liked_microposts, through: :likes, source: :micropost
   
   def like(micropost)

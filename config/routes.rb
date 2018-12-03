@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :followers
       # お気に入り機能
       get :liked_microposts
+      
     end
   end
 
